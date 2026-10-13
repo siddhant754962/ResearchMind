@@ -1,0 +1,7 @@
+[project]
+name = "multi-agent"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-groq>=1.1.3",
+]
