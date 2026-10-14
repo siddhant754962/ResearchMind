@@ -8,11 +8,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Model setup: Groq
+import os
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
 
-llm = ChatGroq(
-    model="openai/gpt-oss-20b",
+load_dotenv()
+
+llm = ChatOpenAI(
+    model="openrouter/free",
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
     temperature=0,
+    max_retries=1,
+    timeout=60,
 )
 
 
